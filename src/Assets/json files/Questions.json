@@ -1,0 +1,154 @@
+{
+  "Questions": [
+    {
+      "id": 1,
+      "etap": 1,
+      "etap_number": 0.5,
+      "etap_name": "Informations personnelles",
+      "question": "Quelle est votre date de naissance ?",
+      "hint": "Les tarifs de certaines mutuelles santé varient selon votre âge.",
+      "label": "Date de naissance",
+      "type": "date"
+    },
+    {
+      "id": 2,
+      "etap": 1,
+      "etap_number": 1,
+      "etap_name": "Informations personnelles",
+      "question": "Quel est votre code postal ?",
+      "hint": "Les tarifs de certaines mutuelles varient selon votre localisation.",
+      "label": "Code postal",
+      "type": "text"
+    },
+    {
+      "id": 3,
+      "etap": 2,
+      "etap_number": 2,
+      "etap_name": "Vos ayants-droits",
+      "question": "Qui souhaitez-vous couvrir avec l’assurance santé ?",
+      "hint": "",
+      "type": "checkbox",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Vous-même"
+        },
+        {
+          "id": 2,
+          "answer": "Votre partenaire"
+        },
+        {
+          "id": 3,
+          "answer": "vos enfants"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "etap": 3,
+      "etap_number": 1.5,
+      "etap_name": "Vos garanties",
+      "question": "Quel niveau de garanties souhaitez-vous ?",
+      "hint": "Cela nous permettra de vous proposer des offres correspondant à vos critères.",
+      "type": "radio",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Minimum"
+        },
+        {
+          "id": 2,
+          "answer": "Medium"
+        },
+        {
+          "id": 3,
+          "answer": "Élevé"
+        },
+        {
+          "id": 4,
+          "answer": "Premium"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "etap": 3,
+        "etap_number": 3,
+      "etap_name": "Vos garanties",
+      "question": "À quelles garanties accordez-vous de l’importance ?",
+      "hint": "Cela nous permettra de vous proposer des offres correspondant à vos critères.",
+      "type": "checkbox",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Dépassements d’honoraires - secteur non conventionné (Option surcomplémentaire)"
+        },
+        {
+          "id": 2,
+          "answer": "Chambre particulière"
+        },
+        {
+          "id": 3,
+          "answer": "Orthodontie et/ou Prothèse dentaire (remboursées Sécurité Sociale)"
+        },
+        {
+          "id": 4,
+          "answer": "Médecine douce (ostéopathe, chiropracteur, podologue…)"
+        },
+        {
+          "id": 5,
+          "answer": "Équipements optique et/ou lentilles"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "etap": 4,
+        "etap_number": 4,
+      "etap_name": "Votre contrat",
+      "question": "Avez-vous déjà une assurance santé ?",
+      "hint": "",
+      "type": "radio",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Oui, j’ai  déjà une assurance santé"
+        },
+        {
+          "id": 2,
+          "answer": "Non, je n’ai pas d’assurance santé"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "etap": 5,
+        "etap_number": 5,
+      "etap_name": "Date de démarrage",
+      "question": "Quand voulez-vous démarrer votre contrat ?",
+      "hint": "Le devis qui va vous être proposé sera valable aux tarifs et conditions à la date d'édition de ce dernier",
+      "label": "Date de début du contrat",
+      "type": "date"
+    },
+    {
+      "id": 8,
+      "etap": 6,
+        "etap_number": 3,
+      "etap_name": "Vos coordonnées",
+      "question": "Quel est votre numéro de téléphone ?",
+      "hint": "Un de nos experts vous recontacte au plus vite.",
+      "label": "Téléphone",
+      "type": "text"
+    },
+    {
+      "id": 9,
+      "etap": 6,
+        "etap_number": 6,
+      "etap_name": "Vos coordonnées",
+      "question": "Quelle est votre adresse email ?",
+      "hint": "Après avoir défini ensemble vos besoins, vous recevrez votre devis par mail.",
+      "label": "Adresse email",
+      "type": "text"
+    }
+  ]
+}
