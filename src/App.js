@@ -7,34 +7,75 @@ import qustions from "./Assets/json files/Questions.json";
 // components
 import Nav from "./components/Nav";
 import BackButton from "./components/BackButton";
-import ProgressBarx from "./components/ProgressBar";
-import QuestionsText from "./components/Questions";
+import ProgressBarx from "./components/ProgressBarx";
+import { Button } from "antd";
+
+// Questions Components
+import QuestionsCP from "./components/Questions Components/QuestionsCP";
+import QuestionsDate from "./components/Questions Components/QuestionsDate";
+import QuestionsAssurance from "./components/Questions Components/QuestionsAssurance";
+
+
 //custom Components
 
 function App() {
   const questions = qustions.Questions;
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState(2);
 
   return (
-    <div className="">
+    <div className="flex flex-col items-center justify-center w-full">
       <Nav />
-      <main>
-        {number > 0 && <BackButton setNumber={setNumber} number={number} />}
-        <div className="flex gap-3 w-3/4">
-          <ProgressBarx number={number} questions={questions} />
-        </div>
+      <main className="md:w-4/5 w-full flex flex-col  items-center">
+        {number > 0 ? (
+          <BackButton setNumber={setNumber} number={number} />
+        ) : (
+          <div className="h-[5.8rem]"></div>
+        )}
         <div className="">
-          <h1>
+          <h1 className=" font-ManropeBold font-bold text-[24px] text-CustomBlue">
             Etap {questions[number].etap} /{" "}
-            {questions[questions.length - 1].etap} - {" "}
+            {questions[questions.length - 1].etap} -{" "}
             {questions[number].etap_name}
           </h1>
         </div>
-        <div>
-            <QuestionsText {...questions[number]} />
+        <ProgressBarx number={number} questions={questions} />
+
+        <div className="w-full">
+          {number === 0 && <QuestionsDate {...questions[number]} />}
+          {number === 1 && <QuestionsCP {...questions[number]} />}
+          {number === 2 && <QuestionsAssurance {...questions[number]} />}
+          {number === 3 && <QuestionsCP {...questions[number]} />}
+          {number === 4 && <QuestionsCP {...questions[number]} />}
+          {number === 5 && <QuestionsCP {...questions[number]} />}
+          {number === 6 && <QuestionsCP {...questions[number]} />}
+          {number === 7 && <QuestionsCP {...questions[number]} />}
+          {number === 8 && <QuestionsCP {...questions[number]} />}
+          {number === 9 && <QuestionsCP {...questions[number]} />}
+          
         </div>
       </main>
-      <button onClick={() => setNumber(number + 1)} className=" bg-white">Next</button>
+
+      {number < questions.length ? (
+        <Button
+          type="primary"
+          size="large"
+          onClick={() => setNumber(number + 1)}
+          className=" bg-white text-CustomBlue text-[20px] font-ManropeBold hover:cursor-pointer hover:text-sky-900 gap-1 flex justify-center items-center  mt-8 lg:py-4 "
+        >
+          Question suivante
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 inline-block"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M9 5l7 7-7 7" />
+          </svg>
+        </Button>
+      ) : (
+        <div className="h-[5.8rem]"></div>
+      )}
     </div>
   );
 }

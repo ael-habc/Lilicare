@@ -2,4 +2,45 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: #e5f0fb;
+  font-family: "Manrope", sans-serif;
+}
+
+#root {
+  width: 100vw;
+}
+
+.question {
+  color: #3978B0;
+  font-family: "Manrope", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.hint {
+  color: #234b6e;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  padding-top: 10px;
+}
+
+.label {
+  color: #234b6e;
+  font-size: 12px;
+  align-self: flex-start;
+}
+
+
+.ant-progress-bg {
+  height: 5px !important;
+}
+
+.cardBox1 {
+  background-color: #01A98F;
+  border-radius: 54% 46% 74% 26% / 68% 45% 55% 32%  ;
+}
+
+.card1 {
+  border: 1px solid #01A98F;
+  background-color: transparent;
 }
