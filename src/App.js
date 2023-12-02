@@ -32,7 +32,7 @@ function App() {
           <div className="h-[5.8rem]"></div>
         )}
         <div className="">
-          <h1 className=" font-ManropeBold font-bold text-[24px] text-CustomBlue">
+          <h1 className=" font-ManropeBold font-bold text-[24px] text-[#22496b]">
             Etap {questions[number].etap} /{" "}
             {questions[questions.length - 1].etap} -{" "}
             {questions[number].etap_name}

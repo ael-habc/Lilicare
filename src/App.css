@@ -10,7 +10,7 @@ body {
 }
 
 .question {
-  color: #3978B0;
+  color: #22496b;
   font-family: "Manrope", sans-serif;
   font-size: 25px;
   font-weight: 600;
@@ -25,22 +25,41 @@ body {
 }
 
 .label {
-  color: #234b6e;
+  color: #1b3953;
   font-size: 12px;
   align-self: flex-start;
 }
-
 
 .ant-progress-bg {
   height: 5px !important;
 }
 
 .cardBox1 {
-  background-color: #01A98F;
-  border-radius: 54% 46% 74% 26% / 68% 45% 55% 32%  ;
+  background-color: #01a98f;
+  border-radius: 54% 46% 74% 26% / 68% 45% 55% 32%;
 }
 
 .card1 {
-  border: 1px solid #01A98F;
+  border: 1px solid #01a98f;
+  background-color: transparent;
+}
+
+.cardBox2 {
+  background-color: #c9beb1;
+  border-radius: 50% 50% 53% 47% / 35% 53% 47% 65%;
+}
+
+.card2 {
+  border: 1px solid #c9beb1;
+  background-color: #ebdfd8;
+}
+
+.cardBox3 {
+  background-color: #ff7f41;
+  border-radius: 50% 50% 82% 18% / 46% 53% 47% 54%;
+}
+
+.card3 {
+  border: 1px solid #feb794;
   background-color: transparent;
 }
