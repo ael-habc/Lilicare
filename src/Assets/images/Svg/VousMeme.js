@@ -21,16 +21,16 @@ export default function VousMeme() {
             id="Vector 75"
             d="M50.3033 23.7741C50.3033 21.7964 48.3428 14.5449 39.5204 14.5449C33.6388 14.5449 30.0444 19.4891 29.7177 23.7741C29.3909 28.059 32.9852 33.3328 40.5006 33.3328C48.016 33.3328 50.3033 25.7517 50.3033 23.7741Z"
             stroke="white"
-            stroke-width="2"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinejoin="round"
           ></path>
           <path
             id="Vector 76"
             d="M21.2122 58.4853C25.1516 65.455 61.5152 64.6612 61.5152 56.6671C61.5152 48.4925 57.5041 40.3586 49.2934 37.7735C46.148 36.7832 45.906 39.8418 40.4861 39.8418C35.0661 39.8418 33.5497 36.7844 30.6624 37.7735C27.321 38.9184 24.2425 42.4247 23.0304 45.758C21.8183 49.0913 19.7577 56.3034 21.2122 58.4853Z"
             stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           ></path>
         </g>
       </svg>

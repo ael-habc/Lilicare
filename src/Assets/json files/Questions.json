@@ -54,19 +54,23 @@
       "answers": [
         {
           "id": 1,
-          "answer": "Minimum"
+          "label": "Minimum",
+          "value": "Minimum"
         },
         {
           "id": 2,
-          "answer": "Medium"
+          "label": "Medium",
+          "value": "Medium"
         },
         {
           "id": 3,
-          "answer": "Élevé"
+          "label": "Élevé",
+          "value": "Élevé"
         },
         {
           "id": 4,
-          "answer": "Premium"
+          "label": "Premium",
+          "value": "Premium"
         }
       ]
     },

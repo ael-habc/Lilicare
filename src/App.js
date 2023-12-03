@@ -14,6 +14,7 @@ import { Button } from "antd";
 import QuestionsCP from "./components/Questions Components/QuestionsCP";
 import QuestionsDate from "./components/Questions Components/QuestionsDate";
 import QuestionsAssurance from "./components/Questions Components/QuestionsAssurance";
+import QuestionsGarantie from "./components/Questions Components/QuestionGarantie";
 
 
 //custom Components
@@ -44,7 +45,7 @@ function App() {
           {number === 0 && <QuestionsDate {...questions[number]} />}
           {number === 1 && <QuestionsCP {...questions[number]} />}
           {number === 2 && <QuestionsAssurance {...questions[number]} />}
-          {number === 3 && <QuestionsCP {...questions[number]} />}
+          {number === 3 && <QuestionsGarantie {...questions[number]} />}
           {number === 4 && <QuestionsCP {...questions[number]} />}
           {number === 5 && <QuestionsCP {...questions[number]} />}
           {number === 6 && <QuestionsCP {...questions[number]} />}
@@ -60,7 +61,7 @@ function App() {
           type="primary"
           size="large"
           onClick={() => setNumber(number + 1)}
-          className=" bg-white text-CustomBlue text-[20px] font-ManropeBold hover:cursor-pointer hover:text-sky-900 gap-1 flex justify-center items-center  mt-8 lg:py-4 "
+          className=" text-white bg-CustomBlue text-[20px] font-ManropeBold hover:cursor-pointer hover:bg-red-300 hover:text-CustomBlue gap-1 flex justify-center items-center  mt-8 lg:py-4 "
         >
           Question suivante
           <svg

@@ -19,7 +19,7 @@ export default function QuestionsAssurance(props) {
               type="checkbox"
               id="VousMeme"
               checked
-              className=" self-end "
+              className="  self-end h-4 w-4"
               disabled
             />
             <div className="cardBox2">
@@ -33,7 +33,7 @@ export default function QuestionsAssurance(props) {
             <input
               type="checkbox"
               id="partenaire"
-              className=" self-end "
+              className=" self-end h-4 w-4"
               onChange={() => setChecked(!checked)}
             />
             <div className="cardBox3">
@@ -43,13 +43,13 @@ export default function QuestionsAssurance(props) {
           </div>
         </label>
         <label htmlFor="enfant">
-          <div className="card1  bg-red-300 flex flex-col p-6 rounded-2xl">
+          <div className="card1  bg-red-300 flex flex-col p-6 rounded-2xl" style={{backgroundColor: checked2 ? "#5ab1a4" : "transparent"}}>
             <input
               type="checkbox"
               id="enfant"
-              // checked
+              onChange={() => setChecked2(!checked2)}
               className=" self-end h-4 w-4"
-              // disabled
+              
             />
             <div className="cardBox1">
               <Enfant />

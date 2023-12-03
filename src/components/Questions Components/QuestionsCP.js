@@ -6,7 +6,7 @@ import { EnvironmentTwoTone } from "@ant-design/icons";
 
 
 export default function QuestionsText(props) {
-  const { question, type, id } = props;
+  const {question} = props;
   return (
     <div className="flex flex-col items-center ">
       <h1 className="question">{question}</h1>
