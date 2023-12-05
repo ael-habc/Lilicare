@@ -3,6 +3,7 @@ body {
   height: 100vh;
   background-color: #e5f0fb;
   font-family: "Manrope", sans-serif;
+  overflow-x: hidden;
 }
 
 #root {
@@ -17,11 +18,22 @@ body {
   line-height: 30px;
 }
 
+@media (max-width: 768px) {
+  .question {
+    font-size: 20px;
+  }
+  .hint {
+    font-size: 14px;
+  }
+  
+}
+
 .hint {
   color: #234b6e;
   font-family: "Manrope", sans-serif;
   font-size: 16px;
   padding-top: 10px;
+  text-align: center;
 }
 
 .label {
@@ -62,4 +74,32 @@ body {
 .card3 {
   border: 1px solid #feb794;
   background-color: transparent;
+}
+
+
+.ant-radio-group label {
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 6px;
+  font-size: 16px;
+}
+
+.cardX1 {
+  border: 1px solid #c9beb1;
+  background-color: transparent;
+}
+
+.checkbox {
+  width: 28.45px !important;
+  height: 16px !important;
+
+}
+
+.link {
+  color: #336c9e;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: underline;
 }

@@ -5,13 +5,13 @@ import { EnvironmentTwoTone } from "@ant-design/icons";
 
 
 
-export default function QuestionsText(props) {
-  const {question} = props;
+export default function QuestionsCP(props) {
+  const {question , codePostal, handleCodePostal} = props;
   return (
     <div className="flex flex-col items-center ">
       <h1 className="question">{question}</h1>
       <p className="hint">{props?.hint}</p>
-      <div className="flex flex-col w-2/6 pt-10">
+      <div className="flex flex-col w-5/6 md:w-2/6 pt-10">
         <label htmlFor="text" className="label">
           {props?.label}
         </label>
@@ -19,6 +19,8 @@ export default function QuestionsText(props) {
             id="text"
             type='text'
             size="large"
+            value={codePostal}
+            onChange={handleCodePostal}
             className="h-12"
             prefix={<EnvironmentTwoTone />}
           />
