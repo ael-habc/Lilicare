@@ -5,7 +5,6 @@ import { MailTwoTone } from "@ant-design/icons";
 
 import Modalx from "../Modalx";
 
-
 export default function QuestionsEmail(props) {
   const { question, email, handleEmail, setCheckBoxEmailError } = props;
 
@@ -20,7 +19,7 @@ export default function QuestionsEmail(props) {
     <div className="flex flex-col items-center ">
       <h1 className="question">{question}</h1>
       <p className="hint">{props?.hint}</p>
-      <div className="flex flex-col w-2/6 pt-10">
+      <div className="flex flex-col w-4/6 pt-10">
         <label htmlFor="text" className="label">
           {props?.label}
         </label>
@@ -35,7 +34,7 @@ export default function QuestionsEmail(props) {
         />
       </div>
       <div className="flex flex-col gap-3 mt-5 w-4/6">
-        <div className="flex gap-4 justify-between items-center">
+        <div className="flex items-center">
           <input
             type="checkbox"
             id="1"
@@ -44,18 +43,20 @@ export default function QuestionsEmail(props) {
             onChange={() => setChecked(!checked)}
             className="h-7 w-7 checkbox"
           />
+          <p className="star">*</p>
+
           <label for="1" className=" text-sm">
             J’accepte que mon adresse email soit utilisée pour recevoir des
             offres et conseils autres que mon devis{" "}
           </label>
         </div>
 
-        <p className=" text-[14px]">
+        <p className=" text-[12px]">
           En renseignant votre adresse, vous acceptez de recevoir nos
           communications sur votre devis par email. .
         </p>
 
-        <p className=" text-[14px]">
+        <p className=" text-[12px]">
           Pour plus d'informations sur le traitement de vos données, nous vous
           invitons à consulter notre&nbsp;
           <a className="link" onClick={() => setOpen(true)}>
@@ -68,5 +69,3 @@ export default function QuestionsEmail(props) {
     </div>
   );
 }
-
-

@@ -16,6 +16,11 @@ body {
   font-size: 25px;
   font-weight: 600;
   line-height: 30px;
+  text-align: center;
+}
+
+.etap {
+  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -76,6 +81,18 @@ body {
   background-color: transparent;
 }
 
+@media (max-width: 768px) {
+  
+
+  svg {
+    width: 40px;
+    aspect-ratio: 1/1;
+  }
+}
+.enfantChackbox {
+  color: #1b3953 !important;
+}
+
 
 .ant-radio-group label {
   height: 100%;
@@ -99,7 +116,24 @@ body {
 .link {
   color: #336c9e;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
   text-decoration: underline;
+}
+
+
+.star {
+  color: red;
+  padding-right: 5px;
+  font-size: 20px;
+  animation: glow .7s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    opacity: 0;  /* Adjust the shadow color and size */
+  }
+  to {
+   opacity: 100%;/* Adjust the shadow color and size */
+  }
 }

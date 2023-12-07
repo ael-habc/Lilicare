@@ -1,10 +1,17 @@
 import React from "react";
 
-export default function BackButton({ number, setNumber }) {
+export default function BackButton({ number, setNumber, assuranceE }) {
+  const handleClick = () => {
+    setNumber(number - 1);
+    if (!assuranceE && number === 4) {
+      setNumber(number - 2);
+      console.log(number);
+    }
+  };
   return (
     <button
       className=" text-CustomBlue font-ManropeBold hover:cursor-pointer hover:text-sky-900 gap-1 flex justify-center items-center  mt-8 lg:py-4 self-start text-lg"
-      onClick={() => setNumber(number - 1)}
+      onClick={handleClick}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

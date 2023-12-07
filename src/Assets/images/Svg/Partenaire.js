@@ -3,8 +3,8 @@ import React from "react";
 export default function Partenaire() {
   return (
     <svg
-      width="80"
-      height="81"
+    className=" w-10 md:w-20 h-10 md:h-20"
+
       viewBox="0 0 80 81"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

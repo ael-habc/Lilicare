@@ -3,11 +3,15 @@ import React from "react";
 import { Input } from "antd";
 import { PhoneTwoTone } from "@ant-design/icons";
 
+import Modalx from "../Modalx";
+
 export default function QuestionsTelephone(props) {
   const { question, telephone, handleTelephone, setCheckBoxPhoneError } = props;
   const [checked, setChecked] = React.useState(false);
   const [checked2, setChecked2] = React.useState(false);
   const [checked3, setChecked3] = React.useState(false);
+
+  const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
     if (checked && checked2 && checked3) {
@@ -15,7 +19,7 @@ export default function QuestionsTelephone(props) {
     } else {
       setCheckBoxPhoneError(true);
     }
-  }, [checked, checked2, checked3]);
+  }, [checked, checked2, checked3, setCheckBoxPhoneError]);
   return (
     <div className="flex flex-col items-center ">
       <h1 className="question">{question}</h1>
@@ -35,7 +39,7 @@ export default function QuestionsTelephone(props) {
         />
       </div>
       <div className="flex flex-col gap-3 mt-5 w-4/6">
-        <div className="flex gap-4 justify-between items-center">
+        <div className="flex items-center">
           <input
             type="checkbox"
             id="1"
@@ -44,11 +48,12 @@ export default function QuestionsTelephone(props) {
             onChange={() => setChecked(!checked)}
             className="h-7 w-7 checkbox"
           />
+          <p className="star">*</p>
           <label for="1" className=" text-sm">
             J'accepte d'être également contacté par SMS à propos de mon devis.
           </label>
         </div>
-        <div className="flex gap-4 justify-between items-center">
+        <div className="flex items-center">
           <input
             type="checkbox"
             id="2"
@@ -57,12 +62,13 @@ export default function QuestionsTelephone(props) {
             onChange={() => setChecked2(!checked2)}
             className="h-7 w-7 checkbox"
           />
+          <p className="star">*</p>
           <label for="2" className=" text-sm">
             Je ne souhaite pas recevoir d'appel pour me présenter d'autres
             offres que le devis.
           </label>
         </div>
-        <div className="flex gap-4 justify-between items-center">
+        <div className="flex  items-center">
           <input
             type="checkbox"
             id="3"
@@ -71,20 +77,22 @@ export default function QuestionsTelephone(props) {
             onChange={() => setChecked3(!checked3)}
             className="h-7 w-7 checkbox"
           />
+          <p className="star">*</p>
           <label for="3" className=" text-sm">
             J'accepte de recevoir des SMS pour d'autres offres que mon devis.
           </label>
         </div>
 
-        <p className=" text-[14px]">
-          Vous serez rappelé par un expert de nos sociétés Social Care Digital,
-          courtier immatriculé au registre ORIAS sous le n° 210 07 867, ou
-          Social Care Consulting, courtier immatriculé au registre ORIAS sous le
-          n° 190 01 021. Conformément à la réglementation, nous vous informons
-          que vous disposez du droit de vous opposer au démarchage téléphonique
-          en vous inscrivant gratuitement sur la liste BLOCTEL. Pour plus
-          d’information sur le traitement de vos données, nous vous invitons à
-          consulter notre politique de<a className="link" href="./pages/protection"> protection des données personnelles </a> .
+        <p className=" text-[12px]">
+          lorem ipsum dolor sit amet, consectetur adipiscing elitlorem ipsum
+          dolor sit amet, consectetur adipiscing elitlorem ipsum dolor sit amet,
+          consectetur adipiscing elitlorem ipsum dolor sit amet, consectetur
+          consectetur adipiscing elit &nbsp;
+          <a className="link" onClick={() => setOpen(true)}>
+            protection des données personnelles
+          </a>
+          .
+        <Modalx open={open} setOpen={setOpen} />
         </p>
       </div>
     </div>

@@ -29,12 +29,13 @@ import {
   codePostalValidation,
   emailValidation,
   phoneValidation,
+  contractValidation,
 } from "./Assets/functions/validation";
 import axios from "axios";
 function App() {
   const questions = qustions.Questions;
   const [number, setNumber] = useState(0);
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(true);
 
   const [utm_source, setUtm_source] = useState("");
   const [utm_medium, setUtm_medium] = useState("");
@@ -60,7 +61,7 @@ function App() {
   const [codePostal, setCodePostal] = useState("");
   const [assuranceP, setAssuranceP] = useState(false);
   const [assuranceE, setAssuranceE] = useState(false);
-  const [garantie, setGarantie] = useState("");
+  const [enfantN, setEnfantN] = useState(1);
   const [importance, setImportance] = useState([]);
   const [assuranceSante, setAssuranceSante] = useState("");
   const [contract, setContract] = useState("");
@@ -73,7 +74,7 @@ function App() {
   const [dateError, setDateError] = useState(true);
   const [codePostalError, setCodePostalError] = useState(true);
   const [assuranceError, setAssuranceError] = useState(false);
-  const [garantieError, setGarantieError] = useState(true);
+  const [enfantNError, setEnfantNError] = useState(true);
   const [importanceError, setImportanceError] = useState(true);
   const [assuranceSanteError, setAssuranceSanteError] = useState(true);
   const [contractError, setContractError] = useState(true);
@@ -100,11 +101,9 @@ function App() {
     }
   };
 
-  const handleGarantie = (e) => {
-    setGarantieError("");
-    setGarantie(e.target.value);
+  const handleEnfantNumber = () => {
+    setEnfantNError(false);
   };
-
   const handleImportance = (e) => {
     if (
       importance[0] ||
@@ -131,7 +130,7 @@ function App() {
 
   const handleContract = (e) => {
     setContractError("");
-    setContractError(dateValidation(e.target.value));
+    setContractError(contractValidation(e.target.value));
     setContract(e.target.value);
   };
 
@@ -147,15 +146,19 @@ function App() {
     setEmail(e.target.value);
   };
 
-  const handleNext = () => {
-    if (number < questions.length - 1) setNumber(number + 1);
-    else {
+  const handleNext = (e) => {
+    if (number < questions.length - 1) {
+      setNumber(number + 1);
+      if (number === 2 && !assuranceE) {
+        setNumber(number + 2);
+      }
+    } else {
       const data = {
         dateNaissance: date,
         codePostal: codePostal,
         assurance_partenaire: assuranceP,
         assurance_Enfant: assuranceE,
-        garantie: garantie,
+        enfantN: enfantN,
         choice1: importance[0],
         choice2: importance[1],
         choice3: importance[2],
@@ -172,25 +175,35 @@ function App() {
         utm_id,
       };
 
-      // axios.post("http://localhost:4000/users", data).then((res) => {
+      axios.post("http://localhost:4000/users", data).then((res) => {
         setSuccess(true);
-      // });
+      });
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleNext();
     }
   };
 
   return (
-    <>
+    <div className="pb-10">
       {!success ? (
-        <div className="flex flex-col items-center justify-center w-full">
+        <div className="flex flex-col items-center mb-10 justify-center w-full">
           <Nav />
-          <main className="md:w-4/5 w-full flex flex-col   items-center px-5 ">
+          <main className="md:w-3/5 w-full flex flex-col items-center px-5 ">
             {number > 0 ? (
-              <BackButton setNumber={setNumber} number={number} />
+              <BackButton
+                setNumber={setNumber}
+                number={number}
+                assuranceE={assuranceE}
+              />
             ) : (
               <div className="h-[5.8rem]"></div>
             )}
             <div className="">
-              <h1 className=" font-ManropeBold font-bold align-middle text-[18px] md:text-[24px] text-[#22496b]">
+              <h1 className="etap font-ManropeBold font-bold  text-[18px] md:text-[24px] text-[#22496b]">
                 Etap {questions[number].etap} /{" "}
                 {questions[questions.length - 1].etap} -{" "}
                 {questions[number].etap_name}
@@ -221,10 +234,11 @@ function App() {
                   {...questions[number]}
                 />
               )}
-              {number === 3 && (
+              {number === 3 && assuranceE && (
                 <QuestionsGarantie
-                  garantie={garantie}
-                  handleGarantie={handleGarantie}
+                  enfantN={enfantN}
+                  handleEnfantNumber={handleEnfantNumber}
+                  setEnfantN={setEnfantN}
                   {...questions[number]}
                 />
               )}
@@ -272,6 +286,8 @@ function App() {
               type="primary"
               size="large"
               onClick={handleNext}
+              onKeyUp={handleKeyPress}
+              tabIndex="0"
               disabled={
                 number === 0
                   ? dateError
@@ -280,7 +296,7 @@ function App() {
                   : number === 2
                   ? assuranceError
                   : number === 3
-                  ? garantieError
+                  ? enfantNError
                   : number === 4
                   ? importanceError
                   : number === 5
@@ -311,9 +327,9 @@ function App() {
           )}
         </div>
       ) : (
-        <ThanksPage />
+        <ThanksPage setNumber={setNumber} setSuccess={setSuccess}/>
       )}
-    </>
+    </div>
   );
 }
 

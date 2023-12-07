@@ -11,7 +11,7 @@ export default function QuestionsCP(props) {
     <div className="flex flex-col items-center ">
       <h1 className="question">{question}</h1>
       <p className="hint">{props?.hint}</p>
-      <div className="flex flex-col w-5/6 md:w-2/6 pt-10">
+      <div className="flex flex-col w-5/6 md:w-4/6 pt-10">
         <label htmlFor="text" className="label">
           {props?.label}
         </label>
@@ -19,6 +19,7 @@ export default function QuestionsCP(props) {
             id="text"
             type='text'
             size="large"
+            maxLength={5}
             value={codePostal}
             onChange={handleCodePostal}
             className="h-12"

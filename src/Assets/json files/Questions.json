@@ -23,7 +23,7 @@
     {
       "id": 3,
       "etap": 2,
-      "etap_number": 2,
+      "etap_number": 1,
       "etap_name": "Vos ayants-droits",
       "question": "Qui souhaitez-vous couvrir avec l’assurance santé ?",
       "hint": "",
@@ -45,34 +45,12 @@
     },
     {
       "id": 4,
-      "etap": 3,
-      "etap_number": 1.5,
-      "etap_name": "Vos garanties",
-      "question": "Quel niveau de garanties souhaitez-vous ?",
-      "hint": "Cela nous permettra de vous proposer des offres correspondant à vos critères.",
-      "type": "radio",
-      "answers": [
-        {
-          "id": 1,
-          "label": "Minimum",
-          "value": "Minimum"
-        },
-        {
-          "id": 2,
-          "label": "Medium",
-          "value": "Medium"
-        },
-        {
-          "id": 3,
-          "label": " Élevé ",
-          "value": "Élevé"
-        },
-        {
-          "id": 4,
-          "label": "Premium",
-          "value": "Premium"
-        }
-      ]
+      "etap": 2,
+      "etap_number": 2,
+      "etap_name": "Vos ayants-droits",
+      "question": "Combien d’enfants souhaitez-vous assurer ?",
+      "hint": "",
+      "type": ""
     },
     {
       "id": 5,

@@ -5,7 +5,7 @@ export default function ProgressBarx(props) {
   const { number, questions } = props;
   const color = "#3978B0";
   return (
-    <div className="mb-6 mt-3 md:w-2/4 w-3/4 flex gap-0">
+    <div className="mb-6 mt-3 md:w-3/4 w-3/4 flex gap-0">
       <Progress
         strokeColor={color}
         percent={number >= 1 ? 100 : 50}

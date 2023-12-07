@@ -3,8 +3,8 @@ import React from "react";
 export default function Enfant() {
   return (
     <svg
-      width="80"
-      height="82"
+    className=" w-10 md:w-20 h-10 md:h-20"
+
       viewBox="0 0 80 82"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

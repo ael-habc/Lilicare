@@ -2,10 +2,9 @@ import React from "react";
 
 export default function VousMeme() {
   return (
-    <div>
+    <div className="w-full">
       <svg
-        width="80"
-        height="80"
+        className=" w-10 md:w-20 h-10 md:h-20"
         viewBox="0 0 80 80"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

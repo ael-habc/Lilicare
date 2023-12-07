@@ -48,21 +48,26 @@ export const dateValidation = (date) => {
   } else if (!regx.test(date)) {
     return true;
   } else {
-    // Check if the date is within the desired range (18 to 100 years ago)
     const inputDate = new Date(date);
-    // Calculate the minimum and maximum allowed dates
-    
+    const minDate = new Date("1900-01-01");
     const maxDate = new Date();
     maxDate.setFullYear(maxDate.getFullYear());
+    console.log(inputDate, minDate, maxDate);
 
-    if ( inputDate > maxDate) {
+    if (inputDate > maxDate || inputDate < minDate) {
       return true;
     }
 
-    return false; 
+    return false;
   }
 };
+export const contractValidation = (date) => {
+  const regx = /^\d{4}-\d{2}-\d{2}$/;
 
+  if (!date) return true;
+  else if (!regx.test(date)) return true;
+  else return false;
+};
 export const checkboxValidation = (checkbox) => {
   if (!checkbox)
     return "Vous devez accepter les conditions d'utilisation pour continuer.";

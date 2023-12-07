@@ -26,7 +26,7 @@ handleImportance(importance);
     <div className="flex flex-col items-center">
       <h1 className="question">{question}</h1>
       <p className="hint">{props?.hint}</p>
-      <div className="flex flex-col gap-5 pt-7 w-4/6 md:w-3/6">
+      <div className="flex flex-col gap-5 pt-7 w-4/6 md:w-4/6">
         <label htmlFor="1">
           <div
             className="cardX1  flex items-center gap-2 justify-between px-6 py-3 rounded-2xl"

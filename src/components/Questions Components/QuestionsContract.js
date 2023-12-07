@@ -11,7 +11,7 @@ export default function QuestionsContract(props) {
     <div className="flex flex-col items-center ">
       <h1 className="question">{question}</h1>
       <p className="hint">{props?.hint}</p>
-      <div className="flex flex-col w-2/6 pt-10">
+      <div className="flex flex-col w-4/6 pt-10">
         <label htmlFor="text" className="label">
           {props?.label}
         </label>
@@ -21,9 +21,8 @@ export default function QuestionsContract(props) {
             size="large"
             value={contract}
             onChange={handleContract}
-            max={new Date().toISOString().split("T")[0]}
-
-            className="h-12 appearance-none"
+            min={new Date().toISOString().split("T")[0]}
+            className="h-12 "
             prefix={<CalendarTwoTone />}
           />
       </div>
