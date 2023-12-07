@@ -12,7 +12,7 @@ export default function QuestionsAssurance(props) {
       <p className="hint">{props?.hint}</p>
       <div className="flex md:flex-row flex-col w-3/4 md:justify-center gap-5">
         <label htmlFor="VousMeme">
-          <div className="card2  bg-red-300 flex flex-row justify-between items-center md:flex-col md:p-6 p-2 rounded-2xl ">
+          <div className="card2  bg-red-300 flex justify-between items-center md:flex-col flex-row md:p-6 p-2 rounded-2xl ">
             <input
               type="checkbox"
               id="VousMeme"

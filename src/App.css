@@ -30,7 +30,6 @@ body {
   .hint {
     font-size: 14px;
   }
-  
 }
 
 .hint {
@@ -82,8 +81,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  
-
   svg {
     width: 40px;
     aspect-ratio: 1/1;
@@ -92,7 +89,6 @@ body {
 .enfantChackbox {
   color: #1b3953 !important;
 }
-
 
 .ant-radio-group label {
   height: 100%;
@@ -110,7 +106,6 @@ body {
 .checkbox {
   width: 28.45px !important;
   height: 16px !important;
-
 }
 
 .link {
@@ -121,19 +116,28 @@ body {
   text-decoration: underline;
 }
 
-
 .star {
   color: red;
   padding-right: 5px;
   font-size: 20px;
-  animation: glow .7s infinite alternate;
+  animation: glow 0.7s infinite alternate;
 }
 
 @keyframes glow {
   from {
-    opacity: 0;  /* Adjust the shadow color and size */
+    opacity: 0; /* Adjust the shadow color and size */
   }
   to {
-   opacity: 100%;/* Adjust the shadow color and size */
+    opacity: 100%; /* Adjust the shadow color and size */
   }
+}
+
+#next:disabled {
+  background-color: #9b9388;
+  border-color: #c9beb1;
+  color: #fff;
+  cursor: not-allowed;
+  box-shadow: -4px 9px 48px -5px rgba(255,148,148,0.77);
+-webkit-box-shadow: -4px 9px 48px -5px rgba(255,148,148,0.77);
+-moz-box-shadow: -4px 9px 48px -5px rgba(255,148,148,0.77);
 }

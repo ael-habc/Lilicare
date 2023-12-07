@@ -35,7 +35,7 @@ import axios from "axios";
 function App() {
   const questions = qustions.Questions;
   const [number, setNumber] = useState(0);
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
 
   const [utm_source, setUtm_source] = useState("");
   const [utm_medium, setUtm_medium] = useState("");
@@ -104,7 +104,7 @@ function App() {
   const handleEnfantNumber = () => {
     setEnfantNError(false);
   };
-  const handleImportance = (e) => {
+  const handleImportance = () => {
     if (
       importance[0] ||
       importance[1] ||
@@ -211,7 +211,7 @@ function App() {
             </div>
             <ProgressBarx number={number} questions={questions} />
 
-            <div className="w-full">
+            <form className="w-full flex flex-col">
               {number === 0 && (
                 <QuestionsDate
                   date={date}
@@ -278,12 +278,10 @@ function App() {
                   {...questions[number]}
                 />
               )}
-            </div>
-          </main>
-
-          {number < questions.length ? (
-            <Button
-              type="primary"
+                {number < questions.length ? (
+            <button
+                  id="next"
+              type="submit"
               size="large"
               onClick={handleNext}
               onKeyUp={handleKeyPress}
@@ -309,7 +307,7 @@ function App() {
                   ? emailError || checkBoxEmailError
                   : false
               }
-              className=" text-white bg-CustomBlue text-[20px] font-ManropeBold hover:cursor-pointer hover:disabled:cursor-not-allowed hover:!disabled:text-CustomBlue gap-1 flex justify-center items-center  mt-8 lg:py-4 "
+              className=" hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  bg-CustomBlue text-[16px] font-ManropeBold hover:cursor-pointer hover:disabled:cursor-not-allowed hover:!disabled:text-CustomBlue gap-1 flex justify-center items-center self-center  mt-8  md:w-3/6 "
             >
               {number != 8 ? "Question suivante" : "Accéder à mes offres"}
               <svg
@@ -321,10 +319,14 @@ function App() {
               >
                 <path d="M9 5l7 7-7 7" />
               </svg>
-            </Button>
+            </button>
           ) : (
             <div className="h-[5.8rem]"></div>
           )}
+            </form>
+          </main>
+
+        
         </div>
       ) : (
         <ThanksPage setNumber={setNumber} setSuccess={setSuccess}/>
