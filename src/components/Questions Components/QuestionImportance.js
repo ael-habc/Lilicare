@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function QuestionImportance(props) {
   const { question, importance, handleImportance } = props;
@@ -8,20 +8,20 @@ export default function QuestionImportance(props) {
   const [checked4, setChecked4] = React.useState(false);
   const [checked5, setChecked5] = React.useState(false);
 
-
-handleImportance(importance);
-
-  importance[0] = checked
-    ? "Dépassements d’honoraires - secteur non conventionné (Option surcomplémentaire)"
-    : false;
-  importance[1] = checked2 ? "Chambre particulière" : false;
-  importance[2] = checked3
-    ? "Orthodontie et/ou Prothèse dentaire (remboursées Sécurité Sociale)"
-    : false;
-  importance[3] = checked4
-    ? "Médecine douce (ostéopathe, chiropracteur, podologue…)"
-    : false;
-  importance[4] = checked5 ? "Équipements optique et/ou lentilles" : false;
+  useEffect(() => {
+    importance[0] = checked
+      ? "Dépassements d’honoraires - secteur non conventionné (Option surcomplémentaire)"
+      : false;
+    importance[1] = checked2 ? "Chambre particulière" : false;
+    importance[2] = checked3
+      ? "Orthodontie et/ou Prothèse dentaire (remboursées Sécurité Sociale)"
+      : false;
+    importance[3] = checked4
+      ? "Médecine douce (ostéopathe, chiropracteur, podologue…)"
+      : false;
+    importance[4] = checked5 ? "Équipements optique et/ou lentilles" : false;
+    handleImportance(importance);
+  }, [checked, checked2, checked3, checked4, checked5]);
   return (
     <div className="flex flex-col items-center">
       <h1 className="question">{question}</h1>

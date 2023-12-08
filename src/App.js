@@ -147,6 +147,7 @@ function App() {
   };
 
   const handleNext = (e) => {
+    e.preventDefault();
     if (number < questions.length - 1) {
       setNumber(number + 1);
       if (number === 2 && !assuranceE) {
@@ -175,17 +176,46 @@ function App() {
         utm_id,
       };
 
-      axios.post("http://localhost:4000/users", data).then((res) => {
-        setSuccess(true);
-      });
+      // axios.post("http://localhost:4000/users", data).then((res) => {
+      setSuccess(true);
+      // });
     }
   };
 
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleNext();
-    }
-  };
+  // const handleKeyPress = (e) => {
+  //   if (number < questions.length - 1) {
+  //     setNumber(number + 1);
+  //     if (number === 2 && !assuranceE) {
+  //       setNumber(number + 2);
+  //     }
+  //   } else {
+  //     const data = {
+  //       dateNaissance: date,
+  //       codePostal: codePostal,
+  //       assurance_partenaire: assuranceP,
+  //       assurance_Enfant: assuranceE,
+  //       enfantN: enfantN,
+  //       choice1: importance[0],
+  //       choice2: importance[1],
+  //       choice3: importance[2],
+  //       choice4: importance[3],
+  //       choice5: importance[4],
+  //       assurance_sante: assuranceSante,
+  //       contract_debut: contract,
+  //       phone: telephone,
+  //       email: email,
+  //       utm_source,
+  //       utm_medium,
+  //       utm_campaign,
+  //       utm_term,
+  //       utm_id,
+  //     };
+
+  //     // axios.post("http://localhost:4000/users", data).then((res) => {
+  //     setSuccess(true);
+  //     // });
+  //   }
+  // };
 
   return (
     <div className="pb-10">
@@ -278,58 +308,56 @@ function App() {
                   {...questions[number]}
                 />
               )}
-                {number < questions.length ? (
-            <button
+              {number < questions.length ? (
+                <button
                   id="next"
-              type="submit"
-              size="large"
-              onClick={handleNext}
-              onKeyUp={handleKeyPress}
-              tabIndex="0"
-              disabled={
-                number === 0
-                  ? dateError
-                  : number === 1
-                  ? codePostalError
-                  : number === 2
-                  ? assuranceError
-                  : number === 3
-                  ? enfantNError
-                  : number === 4
-                  ? importanceError
-                  : number === 5
-                  ? assuranceSanteError
-                  : number === 6
-                  ? contractError
-                  : number === 7
-                  ? telephoneError || checkBoxPhoneError
-                  : number === 8
-                  ? emailError || checkBoxEmailError
-                  : false
-              }
-              className=" hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  bg-CustomBlue text-[16px] font-ManropeBold hover:cursor-pointer hover:disabled:cursor-not-allowed hover:!disabled:text-CustomBlue gap-1 flex justify-center items-center self-center  mt-8  md:w-3/6 "
-            >
-              {number != 8 ? "Question suivante" : "Accéder à mes offres"}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 inline-block"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          ) : (
-            <div className="h-[5.8rem]"></div>
-          )}
+                  type="submit"
+                  size="large"
+                  onClick={handleNext}
+                  // onKeyUp={handleKeyPress}
+                  // tabIndex="0"
+                  disabled={
+                    number === 0
+                      ? dateError
+                      : number === 1
+                      ? codePostalError
+                      : number === 2
+                      ? assuranceError
+                      : number === 3
+                      ? enfantNError
+                      : number === 4
+                      ? importanceError
+                      : number === 5
+                      ? assuranceSanteError
+                      : number === 6
+                      ? contractError
+                      : number === 7
+                      ? telephoneError || checkBoxPhoneError
+                      : number === 8
+                      ? emailError || checkBoxEmailError
+                      : false
+                  }
+                  className=" hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  bg-CustomBlue text-[16px] font-ManropeBold hover:cursor-pointer hover:disabled:cursor-not-allowed hover:!disabled:text-CustomBlue gap-1 flex justify-center items-center self-center  mt-8  md:w-3/6 "
+                >
+                  {number != 8 ? "Question suivante" : "Accéder à mes offres"}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 inline-block"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              ) : (
+                <div className="h-[5.8rem]"></div>
+              )}
             </form>
           </main>
-
-        
         </div>
       ) : (
-        <ThanksPage setNumber={setNumber} setSuccess={setSuccess}/>
+        <ThanksPage setNumber={setNumber} setSuccess={setSuccess} />
       )}
     </div>
   );
